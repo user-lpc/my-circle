@@ -4,20 +4,85 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#000000"
     tools:context=".activity.MainActivity">
 
     <TextView
-        android:id="@+id/vTvHello"
+        android:id="@+id/login_tv_notice"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World"
-        android:textColor="@android:color/black"
-        android:textSize="20sp"
+        android:layout_marginBottom="60dp"
+        android:text="@string/home_login_haveNotAccount"
+        android:textColor="@color/home_login_haveNotAccount"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="HardcodedText" />
+        tools:ignore="HardcodedText,MissingConstraints" />
 
+    <TextView
+        android:id="@+id/login_tv_signup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="@string/home_login_signup"
+        android:textColor="@color/home_login_signup"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/login_tv_notice"
+        tools:ignore="HardcodedText,MissingConstraints" />
+
+
+    <TextView
+        android:id="@+id/login_tv_or"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="or"
+        android:textColor="@color/home_login_haveNotAccount"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/bt_home_login_signup"
+        tools:ignore="HardcodedText,MissingConstraints" />
+
+
+    <ImageButton
+        android:id="@+id/c_home_login_wechat"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginLeft="111dp"
+        android:layout_marginBottom="80dp"
+        android:background="@drawable/login_tubiao_shape"
+        app:layout_constraintBottom_toTopOf="@+id/login_tv_notice"
+        app:layout_constraintLeft_toLeftOf="parent"
+        tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
+
+    <ImageButton
+        android:id="@+id/c_home_login_qq"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginRight="111dp"
+        android:layout_marginBottom="80dp"
+        android:background="@drawable/login_tubiao_shape"
+        app:layout_constraintBottom_toTopOf="@+id/login_tv_notice"
+        app:layout_constraintRight_toRightOf="parent"
+        tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
+
+    <Button
+        android:id="@+id/bt_home_login_signup"
+        android:layout_width="296dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="225dp"
+        android:background="@drawable/login_bt_shape"
+        android:text="@string/home_login_bt_signup"
+        app:layout_constraintBottom_toTopOf="@+id/login_tv_notice"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

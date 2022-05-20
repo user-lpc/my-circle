@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="home_login_haveNotAccount">#353953</color>
+    <color name="home_login_signup">#4A90E2</color>
+    <color name="home_login_wechat">#979797</color>
+    <color name="home_login_bt">#FE7865</color>
+</resources>

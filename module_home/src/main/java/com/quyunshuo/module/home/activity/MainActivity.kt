@@ -28,8 +28,8 @@ class MainActivity : BaseActivity<HomeActivityMainBinding, HomeViewModel>() {
     }
 
     private fun processData(data: String) {
-        mBinding.vTvHello.text = data
-        mBinding.vTvHello.setTextColor(Color.BLUE)
+//        mBinding.vTvHello.text = data
+//        mBinding.vTvHello.setTextColor(Color.BLUE)
     }
 
     override fun initRequestData() {
