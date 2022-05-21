@@ -4,4 +4,7 @@
     <color name="home_login_signup">#4A90E2</color>
     <color name="home_login_wechat">#979797</color>
     <color name="home_login_bt">#FE7865</color>
+    <color name="home_login_bt_text">#FFFFFF</color>
+    <color name="home_login_text_input">#FFFFFF</color>
+    <color name="home_login_text_hint">#979797</color>
 </resources>
