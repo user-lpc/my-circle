@@ -1,14 +1,18 @@
 package com.mycircle.api
 
+import com.mycircle.pojo.TopNew
 import retrofit2.http.GET
 
 /**
  * Home模块的接口
  *
- * @author Qu Yunshuo
- * @since 6/4/21 5:51 PM
  */
+
+
 interface HomeApiService {
-    @GET("")
+    @GET("/")
     fun login(phone: String, pwd: String)
+
+    @GET("news/techblogs/demo")
+    suspend fun getTest():TopNew
 }

@@ -1,4 +1,4 @@
-package com.mycircle.mvvm.m
+package com.mycircle.mvvm.m.home
 
 import com.mycircle.base.mvvm.m.BaseRepository
 import com.mycircle.api.HomeApiService
@@ -9,7 +9,7 @@ import javax.inject.Inject
  * 首页M层
  *
  */
-class HomeRepository @Inject constructor() : BaseRepository() {
+class HomeCommunityRepository @Inject constructor() : BaseRepository() {
 
     @Inject
     lateinit var mApi: HomeApiService
@@ -22,7 +22,4 @@ class HomeRepository @Inject constructor() : BaseRepository() {
         emit("Hello Hilt")
     }
 
-    fun login(phone: String, pwd: String) {
-        mApi.login(phone,pwd)
-    }
 }

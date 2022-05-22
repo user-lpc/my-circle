@@ -170,8 +170,13 @@
                 android:textColorHint="@color/home_login_text_hint" />
 
         </LinearLayout>
-
-
     </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_login_span"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/home_login_text_input"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

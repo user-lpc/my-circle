@@ -1,10 +1,10 @@
-package com.mycircle.mvvm.vm
+package com.mycircle.mvvm.vm.home
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import com.mycircle.base.ktx.launchIO
 import com.mycircle.base.mvvm.vm.BaseViewModel
-import com.mycircle.mvvm.m.HomeRepository
+import com.mycircle.mvvm.m.home.HomeMainRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.catch
 import javax.inject.Inject
@@ -18,7 +18,7 @@ import javax.inject.Inject
  * @since 5/25/21 5:41 PM
  */
 @HiltViewModel
-class HomeViewModel @Inject constructor(private val mRepository: HomeRepository) : BaseViewModel() {
+class HomeMainViewModel @Inject constructor(private val mRepository: HomeMainRepository) : BaseViewModel() {
 
     val data = MutableLiveData<String>()
 
@@ -32,5 +32,7 @@ class HomeViewModel @Inject constructor(private val mRepository: HomeRepository)
                 .collect { data.postValue(it) }
         }
     }
+
+
 
 }

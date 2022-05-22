@@ -12,15 +12,18 @@ import androidx.fragment.app.Fragment
 
 object AccountUtils {
 
+    const val PARAMS = "PARAMS"
+    const val TARGET = "TARGET"
+
+    /**
+     * 跳转页面
+     */
     fun <T> createIntent(context: Context?, java: Class<T>, vararg params: Pair<String, Any>) : Intent {
         val i = Intent(context, java)
         i.putExtra(TARGET, "${java.`package`}.${java.simpleName}")
         i.putExtra(PARAMS, params)
         return i
     }
-
-    const val PARAMS = "PARAMS"
-    const val TARGET = "TARGET"
 
     /**
      *获取androidId  根据androidId判断当前设备是否登录
@@ -44,7 +47,7 @@ object AccountUtils {
 
         if (!TextUtils.isEmpty(androidId)) {
             //todo 调用服务查询 androidId是否登录
-            return false
+            return true
         }
         return false
 

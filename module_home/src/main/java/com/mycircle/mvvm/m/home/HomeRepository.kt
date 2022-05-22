@@ -1,16 +1,15 @@
-package com.mycircle.mvvm.m
+package com.mycircle.mvvm.m.home
 
 import com.mycircle.base.mvvm.m.BaseRepository
 import com.mycircle.api.HomeApiService
-import com.mycircle.http.HttpUtils
-import com.mycircle.pojo.TopNew
 import kotlinx.coroutines.delay
 import javax.inject.Inject
 
 /**
- * 登录页M层
+ * 首页M层
+ *
  */
-class LoginRepository @Inject constructor() : BaseRepository() {
+class HomeRepository @Inject constructor() : BaseRepository() {
 
     @Inject
     lateinit var mApi: HomeApiService
@@ -23,7 +22,4 @@ class LoginRepository @Inject constructor() : BaseRepository() {
         emit("Hello Hilt")
     }
 
-    suspend fun getTest() = request<TopNew> {
-        emit(HttpUtils.createApi(HomeApiService::class.java).getTest())
-    }
 }

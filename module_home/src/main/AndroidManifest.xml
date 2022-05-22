@@ -7,7 +7,7 @@
             android:exported="false" />
         <!-- Main 首页 -->
         <activity
-            android:name="com.mycircle.mvvm.v.activity.MainActivity"
+            android:name="com.mycircle.mvvm.v.activity.HomeMainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
