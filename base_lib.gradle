@@ -2,7 +2,7 @@
 //********* lib 模块的公共脚本配置 **********
 //****************************************
 
-import com.quyunshuo.androidbaseframemvvm.buildsrc.*
+import com.mycircle.buildsrc.*
 
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'

@@ -2,9 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
 
     <application>
-        <!--  Main 首页  -->
         <activity
-            android:name=".activity.MainActivity"
+            android:name="com.mycircle.mvvm.v.activity.LoginActivity"
+            android:exported="false" />
+        <!-- Main 首页 -->
+        <activity
+            android:name="com.mycircle.mvvm.v.activity.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

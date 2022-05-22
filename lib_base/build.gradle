@@ -5,7 +5,7 @@
 apply from: '../base_lib.gradle'
 apply plugin: 'dagger.hilt.android.plugin'
 
-import com.quyunshuo.androidbaseframemvvm.buildsrc.*
+import com.mycircle.buildsrc.*
 
 android {
 
@@ -14,7 +14,7 @@ android {
     }
 
     resourcePrefix "base_"
-    namespace 'com.quyunshuo.androidbaseframemvvm.base'
+    namespace 'com.mycircle.base'
 }
 
 dependencies {
