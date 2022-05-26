@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -53,10 +54,10 @@
 
     <ImageButton
         android:id="@+id/ib_login_wechat"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
         android:layout_marginLeft="90dp"
-        android:background="@drawable/login_tubiao_shape"
+        android:src="@mipmap/icon_wechart_white"
         app:layout_constraintBottom_toTopOf="@+id/tv_login_notice"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/bt_login_signup"
@@ -64,10 +65,10 @@
 
     <ImageButton
         android:id="@+id/ib_login_qq"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
         android:layout_marginRight="90dp"
-        android:background="@drawable/login_tubiao_shape"
+        android:src="@mipmap/icon_qq_white"
         app:layout_constraintBottom_toTopOf="@+id/tv_login_notice"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/bt_login_signup"
@@ -90,31 +91,17 @@
 
 
     <ImageButton
-        android:id="@+id/ib_login_top"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginBottom="250dp"
-        android:background="@drawable/login_bt_shape"
+        android:id="@+id/ib_logo"
+        android:layout_width="65dp"
+        android:layout_height="95dp"
+        android:layout_marginBottom="200dp"
+        android:src="@mipmap/icon_logo_white"
         app:layout_constraintBottom_toTopOf="@+id/bt_login_signup"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints,SpeakableTextPresentCheck" />
 
-
-    <ImageButton
-        android:id="@+id/ib_login_top_bottom"
-        android:layout_width="50dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="47dp"
-        android:background="@drawable/login_logo_bottom"
-        android:rotation="180"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/ib_login_top"
-
-        tools:ignore="MissingConstraints,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
 
 
     <LinearLayout
@@ -124,7 +111,7 @@
         android:layout_marginBottom="50dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@id/bt_login_signup"
-        app:layout_constraintTop_toBottomOf="@id/ib_login_top_bottom"
+        app:layout_constraintTop_toBottomOf="@id/ib_logo"
         tools:ignore="MissingConstraints">
 
         <LinearLayout

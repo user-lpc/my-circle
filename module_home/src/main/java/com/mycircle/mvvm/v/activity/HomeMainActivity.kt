@@ -1,29 +1,63 @@
 package com.mycircle.mvvm.v.activity
 
-import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentActivity
+import androidx.viewpager2.widget.ViewPager2
+import com.flyco.tablayout.listener.CustomTabEntity
+import com.flyco.tablayout.listener.OnTabSelectListener
+import com.google.android.material.tabs.TabLayout
+import com.mycircle.adapter.HomeTabAdapter
 import com.mycircle.base.HomeBaseActivity
+import com.mycircle.home.R
 import com.mycircle.home.databinding.HomeActivityMainBinding
+import com.mycircle.mvvm.m.home.HomeTitleModel
+import com.mycircle.mvvm.v.fragment.home.HomeFragment
+import com.mycircle.mvvm.v.fragment.home.HomeMyFragment
 import com.mycircle.mvvm.vm.home.HomeMainViewModel
-import com.mycircle.ui.BaseFragmentStateAdapter
 import dagger.hilt.android.AndroidEntryPoint
-import kotlin.random.Random
 
 /**
  * 首页
  *
  */
 @AndroidEntryPoint
-class HomeMainActivity : HomeBaseActivity<HomeActivityMainBinding, HomeMainViewModel>(){
-    private val mCreateFragmentData = mutableListOf<String>()
-    private var mAdapter: InternalPagerFragmentAdapter? = null
-
+class HomeMainActivity : HomeBaseActivity<HomeActivityMainBinding, HomeMainViewModel>() {
+    private val titleTabs = ArrayList<CustomTabEntity>()
+    private val fragments = ArrayList<Fragment>()
     override val mViewModel by viewModels<HomeMainViewModel>()
 
     override fun HomeActivityMainBinding.initView() {
-        initPager()
+        val titles = resources.getStringArray(R.array.home_title)
+        val unselectedList = resources.obtainTypedArray(R.array.home_unselected)
+        val selectedList = resources.obtainTypedArray(R.array.home_select)
+
+        for (i: Int in titles.indices) {
+            titleTabs.add(
+                HomeTitleModel(
+                    titles[i],
+                    selectedList.getResourceId(i, 0),
+                    unselectedList.getResourceId(i, 0)
+                )
+            )
+        }
+
+        fragments.add(HomeFragment())
+        fragments.add(HomeMyFragment())
+
+        mBinding.ctlHomeMain.setTabData(titleTabs)
+        mBinding.vpHomeMain.adapter=HomeTabAdapter(supportFragmentManager,fragments,lifecycle)
+        mBinding.vpHomeMain.offscreenPageLimit = fragments.size
+        mBinding.ctlHomeMain.setOnTabSelectListener(object :OnTabSelectListener {
+            override fun onTabSelect(position: Int) {
+                //绑定fragment并取消进入动画
+                mBinding.vpHomeMain.setCurrentItem(position,false)
+            }
+
+            override fun onTabReselect(position: Int) {
+            }
+        })
+
+
     }
 
     override fun initObserve() {
@@ -34,56 +68,6 @@ class HomeMainActivity : HomeBaseActivity<HomeActivityMainBinding, HomeMainViewM
 
     override fun initRequestData() {
         checkLoginToStart<HomeMainActivity>()
-    }
-
-
-    private fun initPager() {
-        mCreateFragmentData.add("首页")
-        mCreateFragmentData.add("我的")
-        mCreateFragmentData.add("设置")
-        mCreateFragmentData.add("更多")
-        mCreateFragmentData.add("动态")
-        mAdapter = InternalPagerFragmentAdapter(this, mCreateFragmentData)
-//        mBinding.viewPager.adapter = mAdapter
-
-    }
-
-    class InternalPagerFragmentAdapter(activity: FragmentActivity, data: MutableList<String> = mutableListOf()) :
-        BaseFragmentStateAdapter<String>(activity, data) {
-        override fun createFragment(item: String, position: Int): Fragment {
-            val bundle = Bundle().apply {
-                putString("What", item)
-            }
-//            return when (item) {
-//                "首页" -> {
-//                    //假装首页
-//                    InternalFragment()
-//                }
-//                "我的" -> {
-//                    //假装我的
-//                    InternalFragment()
-//                }
-//                "设置" -> {
-//                    //假装设置
-//                    InternalFragment()
-//                }
-//                "更多" -> {
-//                    //假装更多
-//                    InternalFragment()
-//                }
-//                else -> {
-//                    //另外动态item创建类型
-//                    InternalFragment()
-//                }
-//            }.apply {
-//                //设置传递参数bundle
-//                arguments = bundle
-//            }
-
-            return Fragment()
-        }
-
-
     }
 
 

@@ -22,13 +22,10 @@ class HomeCommunityFragment : BaseFragment<FragmentHomeCommunityBinding, HomeCom
     }
 
     private fun processData(data: String) {
-        mBinding.tvHomeC.text = data
 
     }
 
     override fun initRequestData() {
-        //查询动态 展示最新动态信息
-        mViewModel.infoData()
     }
 
 }
